@@ -38,7 +38,7 @@ options_accident_area = ['Residential areas', 'Office areas', '  Recreational ar
 features = [ 'Number_of_vehicles_involved', 'Number_of_casualties','Hour_of_day','Type_of_collision','Age_band_of_driver', 'Sex_of_driver',
             'Educational_level','Service_year_of_vehicle', 'Day_of_week', 'Area_accident_occured']
 #Give title to webapp using html syntax
-st.markdown("<h1 style='font-size:60px;'>Accident Severity prediction App 🚧</h1>",unsafe_allow_html=True,text_alignment='center')
+st.markdown("## Accident Severity prediction App 🚧",unsafe_allow_html=True,text_alignment='center')
 
 #define mainfunction to take inputs fro users
 def main():
