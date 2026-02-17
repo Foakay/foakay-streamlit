@@ -46,20 +46,20 @@ def main():
         st.subheader('Please Enter the following inputs:')
         no_vehicles = st.slider('Number of vehicles involved',1,7,value=0,format='%d')
         no_casualites = st.slider('Number of Casualties',1,8,value=0,format='%d')
-        hour = st.slider('Number of Casualties',0,23,value=0,format='%d') 
+        hour = st.slider('Hour of Day',0,23,value=0,format='%d') 
         collision = st.selectbox('Type of collision',options=options_types_collision)
-        sex = st.selectbox('Type of collision',options=options_sex)
-        education = st.selectbox('Type of collision',options=options_education_level)
-        service = st.selectbox('Type of collision',options=options_service_year)
-        area = st.selectbox('Type of collision',options=options_accident_area)
-        day_of_week = st.selectbox('Type of collision',options=options_day)
-        age = st.selectbox('Type of collision',options=options_age)
+        age = st.selectbox('Age group of Driver',options=options_age)
+        sex = st.selectbox('Sex  of Driver',options=options_sex)
+        education = st.selectbox('Education of Driver',options=options_education_level)
+        service = st.selectbox('Service Year of Vehicle',options=options_service_year)
+        day_of_week = st.selectbox('Day of week',options=options_day)
+        area = st.selectbox('Area Accident occured',options=options_accident_area)
         
-        submit = st.form_submit_button
+        submit = st.form_submit_button('Predict')
         
     #encode using ordinal encoder
     if submit:
-        input_array = np.array([collision,age, sex,education,service,day_of_week,area],ndim=2)
+        input_array = np.array([collision,age, sex,education,service,day_of_week,area],ndmin=2)
         
         encoded_arr = list(encoder.transform(input_array).ravel())
         num_arr=[no_vehicles,no_casualites,hour]
@@ -76,7 +76,7 @@ def main():
 
 a,b,c = st.columns([0.2,0.6,0.2])
 with b: 
-    st.image('det.jpg',use_column_width=True)
+    st.image('det.jpg',width='content')
 
 
 # description about the project and code files            
