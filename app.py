@@ -15,8 +15,8 @@ from PIL import Image
 model = joblib.load("rta_model_deploy3.lzma")
 encoder= joblib.load('ordinal_encoder2.joblib')
 
-### STEP 3: SET STREAMLIT OPTIONS AND CONFIGURATIONS
-
+### ST_EP 3: SET STREAMLIT OPTIONS AND CONFIGURATIONS
+st.set_option("deprecation.showPyplotGlobalUse",False)
 st.set_page_config(page_title='Accident Severity Prediction App',  page_icon='🚧', layout='wide')
 
 ### Create OPTIONS LIST FOR THE DROP DOWN MENU
